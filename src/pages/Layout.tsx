@@ -72,7 +72,7 @@ const Layout: React.FC<LayoutProps> = ({ children, title }) => {
         {isTabletOrLarger && (
           <Box
             sx={{
-              width: { md: "20%" },
+              width: { sm: "25%", md: "20%" },
               bgcolor: theme.palette.primary.main,
               height: "100vh",
               color: theme.palette.common.white,
@@ -91,16 +91,12 @@ const Layout: React.FC<LayoutProps> = ({ children, title }) => {
                 component={"img"}
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQv3SOPSEOJaQ1mUxcAAv200Cb32TuNyYTP7A&s"
                 alt="Logo"
-                sx={{ width: '100%', height: 200,borderRadius:10 }}
+                sx={{ width: "100%", height: 200, borderRadius: 10 }}
               />
             </Box>
             <Divider />
             <List>
-              <ListItem
-                component={Link}
-                to="/dashboard"
-                sx={getActiveStyle("/dashboard")}
-              >
+              <ListItem component={Link} to="/" sx={getActiveStyle("/")}>
                 <ListItemText primary="Dashboard" />
               </ListItem>
               <ListItem
@@ -145,15 +141,19 @@ const Layout: React.FC<LayoutProps> = ({ children, title }) => {
                 component={"img"}
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQv3SOPSEOJaQ1mUxcAAv200Cb32TuNyYTP7A&s"
                 alt="Logo"
-                sx={{ width: 150, height: 150 }}
+                sx={{ width: "100%", height: 200, borderRadius: 10 }}
               />
             </Box>
             <Divider />
-            <List sx={{ m: 10 }}>
-              <ListItem component={Link} to="/dashboard">
+            <List>
+              <ListItem component={Link} to="/" sx={getActiveStyle("/")}>
                 <ListItemText primary="Dashboard" />
               </ListItem>
-              <ListItem component={Link} to="/reports">
+              <ListItem
+                component={Link}
+                to="/reports"
+                sx={getActiveStyle("/reports")}
+              >
                 <ListItemText primary="Reports" />
               </ListItem>
             </List>
@@ -165,7 +165,7 @@ const Layout: React.FC<LayoutProps> = ({ children, title }) => {
           sx={{
             bgcolor: "background.default",
             p: 3,
-            width: { xs: "100%", md: "80%" },
+            width: { xs: "100%", sm: "80%" },
           }}
         >
           <AppBar position="sticky">
